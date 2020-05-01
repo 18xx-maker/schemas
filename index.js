@@ -60,6 +60,7 @@ program.version(pkg.version, "-v, --version", "output the current version");
 program.arguments("<files...>").action((files) => {
   process.exit(
     files
+      .map((f) => path.join(process.cwd(), f))
       .flatMap((file) => glob.sync(file))
       .map(validate)
       .every((x) => x)
