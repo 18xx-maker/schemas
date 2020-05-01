@@ -1,0 +1,16 @@
+{
+  "name": "18xx-schemas",
+  "version": "0.0.0",
+  "description": "Schema files for 18xx-maker game and tile files",
+  "main": "index.js",
+  "repository": "https://github.com/18xx-maker/18xx-schemas",
+  "author": "Christopher Giroir <kelsin@valefor.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "ajv compile -s schemas/\\*.schema.json -r schemas/\\*.schema.json"
+  },
+  "devDependencies": {
+    "ajv": "^6.12.2",
+    "ajv-cli": "^3.1.0"
+  }
+}
