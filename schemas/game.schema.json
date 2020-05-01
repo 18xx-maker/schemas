@@ -34,7 +34,7 @@
     "certLimit": { "$ref": "#/definitions/numberOrSlash" },
     "link": {
       "type": "string",
-      "pattern": "https?://.*/.*"
+      "pattern": "(mailto|https?):.*"
     },
     "shares": {
       "type": "array",
@@ -95,7 +95,11 @@
         },
         "marketTokens": { "type": "integer", "minimum": 0 },
         "extraStationTokens": { "type": "integer", "mimimum": 1},
-        "currency": { "type": "string", "pattern": "^(.*)\\#(.*)$" }
+        "currency": {
+          "description": "The currency format string must contain a # character",
+          "type": "string",
+          "pattern": "^(.*)\\#(.*)$"
+        }
       },
       "required": ["title"],
       "additionalProperties": false
