@@ -160,12 +160,7 @@
               "cost": { "type": "string" },
               "size": {
                 "type": "string",
-                "enum": [
-                  "tiny",
-                  "small",
-                  "medium",
-                  "large"
-                ]
+                "enum": ["tiny", "small", "medium", "large"]
               },
               "type": {
                 "type": "string",
@@ -219,10 +214,25 @@
               },
               "type": {
                 "type": "string",
-                "enum": ["custom", "offboard", "stub", "stop", "mid", "straight",
-                         "straightStop", "gentle", "gentleStop", "gentleStopRev",
-                         "lawson", "sharp", "sharpStop", "sharpStopRev", "bent",
-                         "city", "bleed"]
+                "enum": [
+                  "custom",
+                  "offboard",
+                  "stub",
+                  "stop",
+                  "mid",
+                  "straight",
+                  "straightStop",
+                  "gentle",
+                  "gentleStop",
+                  "gentleStopRev",
+                  "lawson",
+                  "sharp",
+                  "sharpStop",
+                  "sharpStopRev",
+                  "bent",
+                  "city",
+                  "bleed"
+                ]
               }
             }
           },
@@ -293,9 +303,7 @@
         }
       },
       "additionalProperties": false,
-      "required": [
-        "color"
-      ]
+      "required": ["color"]
     }
   },
 

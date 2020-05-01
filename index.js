@@ -2,25 +2,58 @@
 const Ajv = require("ajv");
 const ajv = new Ajv({ allErrors: true });
 
-const chalk = require("chalk");
 const fs = require("fs");
-const glob = require("glob");
 const path = require("path");
-const pkg = require("./package.json");
-const { program } = require("commander");
 
 // Load Schemas
 const gameSchema = require("./schemas/game.schema.json");
+const themeSchema = require("./schemas/theme.schema.json");
+const configSchema = require("./schemas/config.schema.json");
 const tilesSchema = require("./schemas/tiles.schema.json");
 
-// Compile Schemas
-const validateGame = ajv.compile(gameSchema);
-const validateTiles = ajv.compile(tilesSchema);
+// Validate and load schemas
+ajv.addSchema([gameSchema, themeSchema, configSchema, tilesSchema]);
 
-const validate = (file) => {
+const determineSchema = (json) => {
+  // Games have an info object first thing
+  if (json.info) {
+    return gameSchema.$id;
+  }
+
+  // Theme files have a colors field
+  if (json.colors) {
+    return themeSchema.$id;
+  }
+
+  // Config files have a theme setting
+  if (json.theme) {
+    return configSchema.$id;
+  }
+
+  // Tiles are just collections of tiles so they are the default
+  return tilesSchema.$id;
+};
+
+let validate = (json, file) => {
+  const id = determineSchema(json);
+  const valid = ajv.validate(id, json);
+
+  return {
+    valid,
+    id,
+    file,
+    validationErrors: ajv.errors,
+  };
+};
+
+validate.file = (file) => {
   if (!fs.existsSync(file)) {
-    console.log(`${path.basename(file)}: ${chalk.yellow("not found")}`);
-    return false;
+    return {
+      valid: false,
+      id: "unknown",
+      file,
+      error: "file not found",
+    };
   }
 
   let json;
@@ -28,45 +61,15 @@ const validate = (file) => {
   try {
     json = require(file);
   } catch (err) {
-    console.log(`${path.basename(file)}: ${chalk.red("error loading file")}`);
-    console.log(err.message);
-    console.log();
-    return false;
+    return {
+      valid: false,
+      id: "unknown",
+      file,
+      error: err.message,
+    };
   }
 
-  const isGame = !!json.info;
-
-  const validate = isGame ? validateGame : validateTiles;
-
-  const valid = validate(json);
-  const color = valid ? chalk.green : chalk.red;
-  const result = valid ? "valid" : "invalid";
-
-  console.log(`${path.basename(file)}: ${color(result)}`);
-
-  if (!valid) {
-    console.log();
-    console.log(validate.errors);
-    console.log();
-  }
-
-  return valid;
+  return validate(json, file);
 };
 
-// Global program options
-program.version(pkg.version, "-v, --version", "output the current version");
-
-// Pass in a list of files to validate
-program.arguments("<files...>").action((files) => {
-  process.exit(
-    files
-      .map((f) => path.join(process.cwd(), f))
-      .flatMap((file) => glob.sync(file))
-      .map(validate)
-      .every((x) => x)
-      ? 0
-      : 1
-  );
-});
-
-program.parse();
+module.exports = validate;

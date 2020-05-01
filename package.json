@@ -10,7 +10,7 @@
     "test": "ajv compile -s schemas/\\*.schema.json -r schemas/\\*.schema.json"
   },
   "bin": {
-    "18xx-schemas": "index.js"
+    "18xx-schemas": "cli.js"
   },
   "dependencies": {
     "ajv": "^6.12.2",
@@ -30,6 +30,6 @@
     }
   },
   "lint-staged": {
-    "*.{js,css,md}": "prettier --write"
+    "*.{js,json,md}": "prettier --write"
   }
 }
