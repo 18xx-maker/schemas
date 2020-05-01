@@ -4,6 +4,7 @@ const ajv = new Ajv({ allErrors: true });
 
 const chalk = require("chalk");
 const fs = require("fs");
+const glob = require("glob");
 const path = require("path");
 const pkg = require("./package.json");
 const { program } = require("commander");
@@ -57,7 +58,14 @@ program.version(pkg.version, "-v, --version", "output the current version");
 
 // Pass in a list of files to validate
 program.arguments("<files...>").action((files) => {
-  process.exit(files.map(validate).every((x) => x) ? 0 : 1);
+  process.exit(
+    files
+      .flatMap((file) => glob.sync(file))
+      .map(validate)
+      .every((x) => x)
+      ? 0
+      : 1
+  );
 });
 
 program.parse();
