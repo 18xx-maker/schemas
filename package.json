@@ -9,8 +9,26 @@
   "scripts": {
     "test": "ajv compile -s schemas/\\*.schema.json -r schemas/\\*.schema.json"
   },
-  "devDependencies": {
+  "bin": {
+    "18xx-schemas": "index.js"
+  },
+  "dependencies": {
     "ajv": "^6.12.2",
-    "ajv-cli": "^3.1.0"
+    "chalk": "^4.0.0",
+    "commander": "^5.1.0"
+  },
+  "devDependencies": {
+    "ajv-cli": "^3.1.0",
+    "husky": ">=4",
+    "lint-staged": ">=10",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
   }
 }
