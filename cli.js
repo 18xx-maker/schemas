@@ -34,21 +34,26 @@ const displayResult = ({ valid, error, validationErrors, file, id }) => {
   return valid;
 };
 
+const all = require("ramda/src/all");
+const chain = require("ramda/src/chain");
+const compose = require("ramda/src/compose");
+const identity = require("ramda/src/identity");
+const map = require("ramda/src/map");
+
+const processFiles = compose(
+  all(identity),
+  map(displayResult),
+  map(validate.file),
+  chain((file) => glob.sync(file)),
+  map((f) => path.join(process.cwd(), f))
+);
+
 // Global program options
 program.version(pkg.version, "-v, --version", "output the current version");
 
 // Pass in a list of files to validate
 program.arguments("<files...>").action((files) => {
-  process.exit(
-    files
-      .map((f) => path.join(process.cwd(), f))
-      .flatMap((file) => glob.sync(file))
-      .map(validate.file)
-      .map(displayResult)
-      .every((x) => x)
-      ? 0
-      : 1
-  );
+  process.exit(processFiles(files) ? 0 : 1);
 });
 
 program.parse();
