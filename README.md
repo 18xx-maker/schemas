@@ -30,7 +30,7 @@ You can use this package in your javascript to validate game files using two
 functions:
 
 ```javascript
-const validate = require("18xx-schemas");
+const validate = require("@18xx-maker/schemas");
 
 // If you have some json you can validate it directly:
 const json = require("18Awesome.json");

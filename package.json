@@ -1,9 +1,9 @@
 {
-  "name": "18xx-schemas",
+  "name": "@18xx-maker/schemas",
   "version": "0.4.1",
   "description": "Schema files for 18xx-maker game and tile files",
   "main": "index.js",
-  "repository": "https://github.com/18xx-maker/18xx-schemas",
+  "repository": "https://github.com/18xx-maker/schemas",
   "author": "Christopher Giroir <kelsin@valefor.com>",
   "license": "MIT",
   "scripts": {
