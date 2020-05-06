@@ -241,6 +241,11 @@
       }
     },
 
+    "tunnelEntrances": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/position" }
+    },
+
     "values": {
       "type": "array",
       "items": {
@@ -276,6 +281,7 @@
         "terrain": { "$ref": "#/definitions/terrain" },
         "names": { "$ref": "#/definitions/names" },
         "borders": { "$ref": "#/definitions/borders" },
+        "tunnelEntrances": { "$ref": "#/definitions/tunnelEntrances" },
         "removeBorders": { "$ref": "#/definitions/removeBorders" },
         "rotation": {
           "type": "number",
