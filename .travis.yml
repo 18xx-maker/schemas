@@ -1,10 +1,20 @@
 cache:
   yarn: true
   directories:
-    - node_modules
+  - node_modules
 language: node_js
 node_js:
-  - "10"
-  - "11"
-  - "12"
-  - "13"
+- '10'
+- '11'
+- '12'
+- '13'
+deploy:
+  provider: npm
+  email: kelsin@valefor.com
+  api_key:
+    secure: S/g8ttFXs/sgJ5NIKOAdBbcdcM1wo5Jvz4850PaDKCKxGRK3zvGgXQm417Z3VNu3747YYIB1lqxvcqfaBdJ174/sq2ciCPTQxW0rKEP3MaMELawjiqmPkZgH+RXsspw8urxhxHf8PSCyDu1ZSYy7eV/0xAxQmWAQBp95Mfb6fEv6n6EQvAVu6pIp89h1U6F3vRopqY8OTh8pbHP/rCWtlZxUvnLAdcyEPTPvNxsk2YqKUmRbpLFZdGsSLLooqL0xus0AoidxP+J4PusfFRAosMCqBSMKWphHRP8UvpA3HgWbZq5ra1/CC34lrj/PE5lPw5Yg85Vc8+Krat3oi8aHxebt5zlNJQYgBT4m+SCWAcHpwruxbBpLsnyzjca9/75+Tu/tB6ggtueYwUiu0mnZ0fF4vZkrt+EWtrhsdcWjJXIAzEZqLpIe7FsXW8wYdnSG/xGVleYkFk+vZIc/+Jk74RDy3p+itGfyMBMngJvHVa5HrLtdljhDjGwWTtCBDMlh3MeoMPZnljQOxv+0FfVqw/5UlvucfW+fbWWjaFC6C+M4MKFT2o0zQpcqQsAyvmBOt782OjgM97XHwirhv3/l+F6DSAYR0AsYm5Qiju8u6VuI17Az7HFigrkgXxeZciu7QC1nFsgAxc+frfvHDrqsbqP1kDTZBtE1j/c78+kYXSs=
+  on:
+    tags: true
+    repo: 18xx-maker/schemas
+    node_js: '12'
+  skip_cleanup: 'true'
