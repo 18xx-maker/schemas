@@ -16,6 +16,24 @@
         }
       ]
     },
+    "rustItem": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "properties": {
+            "on": { "type": "string" },
+            "index": { "type": "integer", "minimum": 1 }
+          }
+        }
+      ]
+    },
+    "rustEvent": {
+      "oneOf": [
+        { "$ref": "#/definitions/rustItem" },
+        { "type": "array", "items": { "$ref": "#/definitions/rustItem" } }
+      ]
+    },
     "bank": {
       "oneOf": [
         { "type": "number", "minimum": 1 },
@@ -148,7 +166,30 @@
       ]
     },
     "map": {},
-    "phases": {},
+    "phases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "train": {
+            "oneOf": [
+              { "type": "array", "items": { "type": "string" } },
+              { "type": "string" }
+            ]
+          },
+          "limit": { "type": "integer", "minimum": 1 },
+          "rounds": { "type": "integer", "minimum": 1 },
+          "tiles": { "type": "string" },
+          "on": { "type": "string" },
+          "notes": { "type": "string" },
+          "buy_companies": { "type": "boolean" },
+          "events": { "type": "object" }
+        },
+        "required": ["limit", "rounds", "tiles"],
+        "additionalProperties": false
+      }
+    },
     "players": {
       "type": "array",
       "items": {
@@ -182,6 +223,16 @@
           "tile": { "type": "string" },
           "id": { "type": "string" },
           "variant": { "type": "string" },
+          "sym": { "type": "string" },
+          "abilities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": { "type": "string" }
+              }
+            }
+          },
           "bid": {
             "oneOf": [{ "type": "string" }, { "type": "number", "minimum": 0 }]
           },
@@ -216,10 +267,31 @@
       "items": {
         "type": "object",
         "properties": {
-          "tradeInPrice": { "type": "number" },
-          "variant": { "type": "string" }
+          "name": { "type": "string" },
+          "price": { "type": "integer", "minimum": 0 },
+          "color": { "type": "string" },
+          "image": { "type": "string" },
+          "quantity": {
+            "oneOf": [
+              { "type": "integer", "minimum": 1 },
+              { "type": "string", "enum": ["∞"] }
+            ]
+          },
+          "print": { "type": "integer", "minimum": 0 },
+          "tradeInPrice": { "type": "number", "minimum": 0 },
+          "discount": { "type": "object" },
+          "description": { "type": "string" },
+          "note": { "type": "string" },
+          "available": { "type": "string" },
+          "variant": { "type": "string" },
+          "rust": { "$ref": "#/definitions/rustEvent" },
+          "phased": { "$ref": "#/definitions/rustEvent" },
+          "obsolete": { "$ref": "#/definitions/rustEvent" },
+          "permanent": { "type": "boolean" },
+          "players": { "type": "integer" }
         },
-        "additionalProperties": true
+        "required": ["name", "quantity", "color"],
+        "additionalProperties": false
       }
     },
     "wip": { "type": "boolean" }

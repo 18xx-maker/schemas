@@ -5,9 +5,8 @@ cache:
 language: node_js
 node_js:
 - '10'
-- '11'
 - '12'
-- '13'
+- '14'
 deploy:
   provider: npm
   email: kelsin@valefor.com
