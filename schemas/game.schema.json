@@ -222,6 +222,17 @@
         "additionalProperties": true
       }
     },
+    "upgrades": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 1,
+        "uniqueItems": true
+      }
+    },
     "wip": { "type": "boolean" }
   },
   "additionalProperties": false,
