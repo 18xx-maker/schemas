@@ -172,21 +172,39 @@
         "type": "object",
         "properties": {
           "name": { "type": "string" },
+          "minor": { "type": "boolean" },
+          "company": { "type": "string" },
           "train": {
             "oneOf": [
               { "type": "array", "items": { "type": "string" } },
               { "type": "string" }
             ]
           },
-          "limit": { "type": "integer", "minimum": 1 },
+          "limit": {
+            "oneOf": [
+              { "type": "integer", "minimum": 1 },
+              {
+                "type": "string",
+                "pattern": "^∞$"
+              }
+            ]
+          },
           "rounds": { "type": "integer", "minimum": 1 },
           "tiles": { "type": "string" },
           "on": { "type": "string" },
-          "notes": { "type": "string" },
+          "notes": {
+            "oneOf": [
+              { "type": "string" },
+              {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            ]
+          },
           "buy_companies": { "type": "boolean" },
           "events": { "type": "object" }
         },
-        "required": ["limit", "rounds", "tiles"],
+        "required": ["name", "limit", "tiles"],
         "additionalProperties": false
       }
     },
@@ -211,7 +229,6 @@
         "properties": {
           "name": { "type": "string" },
           "note": { "type": "string" },
-          "players": { "type": "integer", "minimum": 1 },
           "minPlayers": { "type": "integer", "minimum": 1 },
           "maxPlayers": { "type": "integer", "minimum": 1 },
           "description": { "type": "string" },
