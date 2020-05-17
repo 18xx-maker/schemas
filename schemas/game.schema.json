@@ -250,12 +250,9 @@
               }
             }
           },
-          "bid": {
-            "oneOf": [{ "type": "string" }, { "type": "number", "minimum": 0 }]
-          },
-          "price": {
-            "oneOf": [{ "type": "string" }, { "type": "number", "minimum": 0 }]
-          },
+          "bid": { "type": "number", "minimum": 0 },
+          "price": { "type": "number", "minimum": 0 },
+          "debt": { "type": "number", "minimum": 0 },
           "revenue": {
             "oneOf": [
               { "type": "number", "minimum": 0 },
