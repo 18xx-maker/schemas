@@ -57,6 +57,7 @@
         "par": { "type": "boolean" },
         "private": { "type": "boolean" },
         "revenue": { "type": "boolean" },
+        "share": { "type": "boolean" },
         "terrain": { "type": "boolean" },
         "token": { "type": "boolean" },
         "train": { "type": "boolean" },
