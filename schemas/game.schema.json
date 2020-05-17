@@ -191,8 +191,18 @@
           },
           "rounds": { "type": "integer", "minimum": 1 },
           "tiles": { "type": "string" },
-          "on": { "type": "string" },
-          "onIndex": { "type": "integer", "minimum": 1 },
+          "on": {
+            "oneOf": [
+              { "type": "string" },
+              {
+                "type": "object",
+                "properties": {
+                  "on": { "type": "string" },
+                  "index": { "type": "integer", "minimum": 2 }
+                }
+              }
+            ]
+          },
           "notes": {
             "oneOf": [
               { "type": "string" },
