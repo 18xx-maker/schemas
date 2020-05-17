@@ -16,24 +16,6 @@
         }
       ]
     },
-    "rustItem": {
-      "oneOf": [
-        { "type": "string" },
-        {
-          "type": "object",
-          "properties": {
-            "on": { "type": "string" },
-            "index": { "type": "integer", "minimum": 1 }
-          }
-        }
-      ]
-    },
-    "rustEvent": {
-      "oneOf": [
-        { "$ref": "#/definitions/rustItem" },
-        { "type": "array", "items": { "$ref": "#/definitions/rustItem" } }
-      ]
-    },
     "bank": {
       "oneOf": [
         { "type": "number", "minimum": 1 },
@@ -298,9 +280,12 @@
           "note": { "type": "string" },
           "available": { "type": "string" },
           "variant": { "type": "string" },
-          "rust": { "$ref": "#/definitions/rustEvent" },
-          "phased": { "$ref": "#/definitions/rustEvent" },
-          "obsolete": { "$ref": "#/definitions/rustEvent" },
+          "rust": { "type": "string" },
+          "phased": { "type": "string" },
+          "obsolete": { "type": "string" },
+          "rustIndex": { "type": "integer" },
+          "phasedIndex": { "type": "integer" },
+          "obsoleteIndex": { "type": "integer" },
           "permanent": { "type": "boolean" },
           "players": { "type": "integer" }
         },
