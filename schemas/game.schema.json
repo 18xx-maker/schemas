@@ -33,6 +33,24 @@
       "type": "string",
       "pattern": "(mailto|https?):.*"
     },
+    "rustItem": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "properties": {
+            "on": { "type": "string" },
+            "index": { "type": "integer", "minimum": 1 }
+          }
+        }
+      ]
+    },
+    "rustEvent": {
+      "oneOf": [
+        { "$ref": "#/definitions/rustItem" },
+        { "type": "array", "items": { "$ref": "#/definitions/rustItem" } }
+      ]
+    },
     "shares": {
       "type": "array",
       "items": {
@@ -174,6 +192,7 @@
           "rounds": { "type": "integer", "minimum": 1 },
           "tiles": { "type": "string" },
           "on": { "type": "string" },
+          "onIndex": { "type": "integer", "minimum": 1 },
           "notes": {
             "oneOf": [
               { "type": "string" },
@@ -184,7 +203,12 @@
             ]
           },
           "buy_companies": { "type": "boolean" },
-          "events": { "type": "object" }
+          "events": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "boolean"
+            }
+          }
         },
         "required": ["name", "limit", "tiles"],
         "additionalProperties": false
@@ -266,7 +290,10 @@
           "name": { "type": "string" },
           "price": { "type": "integer", "minimum": 0 },
           "color": { "type": "string" },
-          "image": { "type": "string" },
+          "image": {
+            "type": "string",
+            "enum": ["2T", "3T", "4T", "5T", "6T", "Diesel", "Pullman"]
+          },
           "phase": { "type": "boolean" },
           "quantity": {
             "oneOf": [
@@ -275,18 +302,14 @@
             ]
           },
           "print": { "type": "integer", "minimum": 0 },
-          "tradeInPrice": { "type": "number", "minimum": 0 },
           "discount": { "type": "object" },
           "description": { "type": "string" },
           "note": { "type": "string" },
           "available": { "type": "string" },
           "variant": { "type": "string" },
-          "rust": { "type": "string" },
-          "phased": { "type": "string" },
-          "obsolete": { "type": "string" },
-          "rustIndex": { "type": "integer" },
-          "phasedIndex": { "type": "integer" },
-          "obsoleteIndex": { "type": "integer" },
+          "rust": { "$ref": "#/definitions/rustEvent" },
+          "phased": { "$ref": "#/definitions/rustEvent" },
+          "obsolete": { "$ref": "#/definitions/rustEvent" },
           "permanent": { "type": "boolean" },
           "players": { "type": "integer" }
         },
