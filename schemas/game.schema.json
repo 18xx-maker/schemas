@@ -267,6 +267,7 @@
           "price": { "type": "integer", "minimum": 0 },
           "color": { "type": "string" },
           "image": { "type": "string" },
+          "phase": { "type": "boolean" },
           "quantity": {
             "oneOf": [
               { "type": "integer", "minimum": 1 },
