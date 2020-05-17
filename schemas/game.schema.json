@@ -304,7 +304,6 @@
           "print": { "type": "integer", "minimum": 0 },
           "discount": { "type": "object" },
           "description": { "type": "string" },
-          "note": { "type": "string" },
           "available": { "type": "string" },
           "variant": { "type": "string" },
           "rust": { "$ref": "#/definitions/rustEvent" },
