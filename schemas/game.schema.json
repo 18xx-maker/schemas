@@ -33,22 +33,22 @@
       "type": "string",
       "pattern": "(mailto|https?):.*"
     },
-    "rustItem": {
+    "trainItem": {
       "oneOf": [
         { "type": "string" },
         {
           "type": "object",
           "properties": {
             "on": { "type": "string" },
-            "index": { "type": "integer", "minimum": 1 }
+            "index": { "type": "integer", "minimum": 2 }
           }
         }
       ]
     },
-    "rustEvent": {
+    "trainEvent": {
       "oneOf": [
-        { "$ref": "#/definitions/rustItem" },
-        { "type": "array", "items": { "$ref": "#/definitions/rustItem" } }
+        { "$ref": "#/definitions/trainItem" },
+        { "type": "array", "items": { "$ref": "#/definitions/trainItem" } }
       ]
     },
     "shares": {
@@ -191,18 +191,7 @@
           },
           "rounds": { "type": "integer", "minimum": 1 },
           "tiles": { "type": "string" },
-          "on": {
-            "oneOf": [
-              { "type": "string" },
-              {
-                "type": "object",
-                "properties": {
-                  "on": { "type": "string" },
-                  "index": { "type": "integer", "minimum": 2 }
-                }
-              }
-            ]
-          },
+          "on": { "$ref": "#/definitions/trainEvent" },
           "notes": {
             "oneOf": [
               { "type": "string" },
@@ -316,9 +305,9 @@
           "description": { "type": "string" },
           "available": { "type": "string" },
           "variant": { "type": "string" },
-          "rust": { "$ref": "#/definitions/rustEvent" },
-          "phased": { "$ref": "#/definitions/rustEvent" },
-          "obsolete": { "$ref": "#/definitions/rustEvent" },
+          "rust": { "$ref": "#/definitions/trainEvent" },
+          "phased": { "$ref": "#/definitions/trainEvent" },
+          "obsolete": { "$ref": "#/definitions/trainEvent" },
           "permanent": { "type": "boolean" },
           "players": { "type": "integer" }
         },
