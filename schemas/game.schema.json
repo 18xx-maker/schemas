@@ -102,8 +102,11 @@
           "maximum": 360
         },
         "titleSize": { "type": "number" },
-        "subTitleSize": { "type": "number" },
+        "subtitleSize": { "type": "number" },
         "designerSize": { "type": "number" },
+        "titleFontFamily": { "type": "string" },
+        "subtitleFontFamily": { "type": "string" },
+        "designerFontFamily": { "type": "string" },
         "orientation": {
           "type": "string",
           "enum": ["horizontal", "vertical"]
@@ -244,6 +247,7 @@
           "icon": { "type": "string" },
           "tile": { "type": "string" },
           "id": { "type": "string" },
+          "idBackgroundColor": { "type": "string" },
           "variant": { "type": "string" },
           "sym": { "type": "string" },
           "abilities": {
