@@ -142,7 +142,7 @@
         "blue": {
           "$ref": "#/definitions/color"
         },
-        "navy": {
+        "navyBlue": {
           "$ref": "#/definitions/color"
         },
         "turquoise": {
@@ -179,6 +179,12 @@
           "$ref": "#/definitions/color"
         },
         "gray": {
+          "$ref": "#/definitions/color"
+        },
+        "tan": {
+          "$ref": "#/definitions/color"
+        },
+        "inky": {
           "$ref": "#/definitions/color"
         }
       },
