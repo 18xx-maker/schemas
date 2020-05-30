@@ -193,6 +193,10 @@
     "tiles": {
       "type": "object",
       "properties": {
+        "id": {
+          "type": "string",
+          "enum": ["right", "left", "none"]
+        },
         "layout": {
           "type": "string",
           "enum": ["offset", "individual", "die", "smallDie"]

@@ -2,6 +2,7 @@
 const chalk = require("chalk");
 const glob = require("glob");
 const path = require("path");
+const util = require("util");
 const pkg = require("./package.json");
 const { program } = require("commander");
 const validate = require("./index");
@@ -21,14 +22,19 @@ const displayResult = ({ valid, error, validationErrors, file, id }) => {
   const basename = path.basename(file);
   const dirname = path.relative(process.cwd(), path.dirname(file));
 
-  console.log(
-    `${chalk.gray(name)} ${color(result)} ${basename} ${chalk.gray(dirname)}`
+  process.stdout.write(
+    `${chalk.gray(name)} ${color(result)} ${basename} ${chalk.gray(dirname)}\n`
   );
 
   if (error || validationErrors) {
-    console.log();
-    console.log(error || validationErrors);
-    console.log();
+    let output = util.inspect(error || validationErrors, {
+      showHidden: false,
+      depth: null,
+      colors: true,
+      maxArrayLength: null,
+      maxStringLength: null,
+    });
+    process.stdout.write(`\n${output}\n\n`);
   }
 
   return valid;

@@ -33,6 +33,85 @@
       "type": "string",
       "pattern": "(mailto|https?):.*"
     },
+    "map": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "copy": { "type": "integer", "minimum": 0 },
+        "title": { "type": "boolean", "enum": [false] },
+        "remove": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]+[0-9]+$"
+          }
+        },
+        "hexes": {
+          "type": "array",
+          "items": { "$ref": "tiles.schema.json#/definitions/hex" }
+        },
+        "roundTracker": {
+          "type": "object",
+          "properties": {
+            "x": { "type": "number" },
+            "y": { "type": "number" },
+            "rotation": {
+              "type": "number",
+              "exclusiveMinimum": -360,
+              "exclusiveMaximum": 360
+            },
+            "type": {
+              "type": "string",
+              "enum": ["row", "row-reverse", "col", "col-reverse", "round"]
+            }
+          },
+          "additionalProperties": false
+        },
+        "players": {
+          "type": "object",
+          "properties": {
+            "x": { "type": "number" },
+            "y": { "type": "number" },
+            "cellWidth": { "type": "number", "exclusiveMinimum": 0 }
+          },
+          "additionalProperties": false
+        },
+        "borderTexts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "cost": { "type": "number" },
+              "circle": { "type": "number" },
+              "color": { "type": "string" },
+              "bgColor": { "type": "string" },
+              "coord": {
+                "type": "string",
+                "pattern": "^[A-Z]+[0-9]+(s[1-6])|(p[1-6])|(a[0-9]+p[0-9]+)|(x[0-9]+y[0-9]+)"
+              }
+            }
+          }
+        },
+        "borders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "color": { "type": "string" },
+              "coords": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Z]+[0-9]+(s[1-6])|(p[1-6])|(a[0-9]+p[0-9]+)|(x[0-9]+y[0-9]+)"
+                }
+              }
+            }
+          }
+        }
+      },
+      "required": ["hexes"],
+      "additionalProperties": false
+    },
     "trainItem": {
       "oneOf": [
         { "type": "string" },
@@ -168,7 +247,12 @@
         { "type": "array", "items": { "type": "string" } }
       ]
     },
-    "map": {},
+    "map": {
+      "oneOf": [
+        { "$ref": "#/definitions/map" },
+        { "type": "array", "items": { "$ref": "#/definitions/map" } }
+      ]
+    },
     "phases": {
       "type": "array",
       "items": {
