@@ -378,8 +378,7 @@
           "price": { "type": "integer", "minimum": 0 },
           "color": { "type": "string" },
           "image": {
-            "type": "string",
-            "enum": ["2T", "3T", "4T", "5T", "6T", "Diesel", "Pullman"]
+            "type": "string"
           },
           "phase": { "type": "boolean" },
           "quantity": {
