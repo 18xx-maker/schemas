@@ -707,6 +707,7 @@
           "type": "integer",
           "minimum": 1
         },
+        "groups": { "type": "array", "items": { "type": "string" } },
         "revenues": {
           "type": "array",
           "items": {
@@ -790,6 +791,7 @@
           "color": {
             "type": "string"
           },
+          "groups": { "type": "array", "items": { "type": "string" } },
           "companies": {
             "type": "array",
             "items": {
@@ -910,6 +912,7 @@
           "name": {
             "$ref": "#/definitions/name"
           },
+          "groups": { "type": "array", "items": { "type": "string" } },
           "width": {
             "type": "number",
             "exclusiveMinimum": 0
@@ -963,6 +966,7 @@
           "name": {
             "$ref": "#/definitions/name"
           },
+          "groups": { "type": "array", "items": { "type": "string" } },
           "color": {
             "type": "string"
           },
