@@ -193,6 +193,7 @@
         "reverse": { "type": "boolean", "enum": [true] },
         "rows": { "type": "integer", "minimum": 1 },
         "name": { "$ref": "#/definitions/name" },
+        "groups": { "type": "array", "items": { "type": "string" } },
         "revenues": {
           "type": "array",
           "items": {
@@ -224,6 +225,7 @@
           "outside": { "type": "boolean", "enum": [true] },
           "name": { "$ref": "#/definitions/name" },
           "color": { "type": "string" },
+          "groups": { "type": "array", "items": { "type": "string" } },
           "companies": {
             "type": "array",
             "items": {
@@ -264,6 +266,7 @@
         "type": "object",
         "properties": {
           "name": { "$ref": "#/definitions/name" },
+          "groups": { "type": "array", "items": { "type": "string" } },
           "width": { "type": "number", "exclusiveMinimum": 0 },
           "color": { "type": "string" }
         },
@@ -277,6 +280,7 @@
         "type": "object",
         "properties": {
           "name": { "$ref": "#/definitions/name" },
+          "groups": { "type": "array", "items": { "type": "string" } },
           "color": { "type": "string" }
         },
         "additionalProperties": false
