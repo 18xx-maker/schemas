@@ -9,6 +9,7 @@ let tiles = require("./src/tiles.schema.json");
 const elements = {
   "definitions.goods.items.properties": ["text", "svg", "font", "position"],
   "definitions.labels.items.properties": ["font", "position"],
+  "definitions.boomtowns.items.properties": ["position", "revenue"],
   "definitions.cities.items.properties": ["position", "revenue"],
   "definitions.companies.items.properties": ["position"],
   "definitions.divides.items.properties": ["position"],

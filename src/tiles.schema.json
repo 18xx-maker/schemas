@@ -64,7 +64,8 @@
       "type": "object",
       "properties": {
         "name": { "type": "string" },
-        "reverse": { "type": "boolean" },
+        "reverse": { "type": "boolean", "enum": [true] },
+        "straight": { "type": "boolean", "enum": [true] },
         "color": { "type": "string" },
         "bgColor": { "type": "string" },
         "offset": {
@@ -208,6 +209,21 @@
         }
       },
       "additionalProperties": false
+    },
+
+    "boomtowns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "$ref": "#/definitions/name" },
+          "dashed": { "type": "boolean", "enum": [false] },
+          "width": { "type": "integer", "minimum": 1 },
+          "color": { "type": "string" },
+          "bgColor": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
     },
 
     "cities": {
@@ -474,6 +490,7 @@
         "borders": { "$ref": "#/definitions/borders" },
         "centerTowns": { "$ref": "#/definitions/centerTowns" },
         "cities": { "$ref": "#/definitions/cities" },
+        "boomtowns": { "$ref": "#/definitions/boomtowns" },
         "mediumCities": { "$ref": "#/definitions/mediumCities" },
         "companies": { "$ref": "#/definitions/companies" },
         "divides": { "$ref": "#/definitions/divides" },
