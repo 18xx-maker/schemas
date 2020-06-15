@@ -190,6 +190,12 @@
           "type": "string",
           "enum": ["horizontal", "vertical"]
         },
+        "capitalization": {
+          "type": "string",
+          "description": "Full cap is the default and doesn't need to be specified.",
+          "enum": ["incremental"]
+        },
+        "mustSellInBlocks": { "type": "boolean", "enum": [true] },
         "marketTokens": { "type": "integer", "minimum": 0 },
         "extraStationTokens": { "type": "integer", "mimimum": 1 },
         "mustSellInBlocks": { "type": "boolean" },

@@ -762,6 +762,12 @@
         "percent": {
           "type": "number",
           "minimum": 0
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "additionalProperties": false
@@ -850,6 +856,12 @@
           "percent": {
             "type": "number",
             "minimum": 0
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -899,6 +911,12 @@
           "percent": {
             "type": "number",
             "minimum": 0
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -953,6 +971,12 @@
           "percent": {
             "type": "number",
             "minimum": 0
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -1003,6 +1027,12 @@
           "percent": {
             "type": "number",
             "minimum": 0
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
