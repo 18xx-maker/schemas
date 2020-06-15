@@ -25,7 +25,9 @@
         },
         {
           "type": "boolean",
-          "enum": [true]
+          "enum": [
+            true
+          ]
         }
       ]
     },
@@ -39,14 +41,18 @@
           },
           "dashed": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "color": {
             "type": "string"
           }
         },
         "additionalProperties": false,
-        "required": ["color"]
+        "required": [
+          "color"
+        ]
       }
     },
     "labels": {
@@ -65,13 +71,22 @@
           },
           "fontStyle": {
             "type": "string",
-            "enum": ["normal", "italic", "oblique"]
+            "enum": [
+              "normal",
+              "italic",
+              "oblique"
+            ]
           },
           "fontWeight": {
             "oneOf": [
               {
                 "type": "string",
-                "enum": ["normal", "bold", "bolder", "lighter"]
+                "enum": [
+                  "normal",
+                  "bold",
+                  "bolder",
+                  "lighter"
+                ]
               },
               {
                 "type": "number"
@@ -87,7 +102,9 @@
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -121,7 +138,9 @@
           }
         },
         "additionalProperties": false,
-        "required": ["label"]
+        "required": [
+          "label"
+        ]
       }
     },
     "name": {
@@ -132,11 +151,15 @@
         },
         "reverse": {
           "type": "boolean",
-          "enum": [true]
+          "enum": [
+            true
+          ]
         },
         "straight": {
           "type": "boolean",
-          "enum": [true]
+          "enum": [
+            true
+          ]
         },
         "color": {
           "type": "string"
@@ -152,13 +175,22 @@
         },
         "fontStyle": {
           "type": "string",
-          "enum": ["normal", "italic", "oblique"]
+          "enum": [
+            "normal",
+            "italic",
+            "oblique"
+          ]
         },
         "fontWeight": {
           "oneOf": [
             {
               "type": "string",
-              "enum": ["normal", "bold", "bolder", "lighter"]
+              "enum": [
+                "normal",
+                "bold",
+                "bolder",
+                "lighter"
+              ]
             },
             {
               "type": "number"
@@ -174,7 +206,9 @@
         },
         "hidden": {
           "type": "boolean",
-          "enum": [true]
+          "enum": [
+            true
+          ]
         },
         "angle": {
           "type": "number",
@@ -208,7 +242,9 @@
         }
       },
       "additionalProperties": false,
-      "required": ["name"]
+      "required": [
+        "name"
+      ]
     },
     "names": {
       "type": "array",
@@ -255,17 +291,28 @@
           },
           "dashed": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "fontStyle": {
             "type": "string",
-            "enum": ["normal", "italic", "oblique"]
+            "enum": [
+              "normal",
+              "italic",
+              "oblique"
+            ]
           },
           "fontWeight": {
             "oneOf": [
               {
                 "type": "string",
-                "enum": ["normal", "bold", "bolder", "lighter"]
+                "enum": [
+                  "normal",
+                  "bold",
+                  "bolder",
+                  "lighter"
+                ]
               },
               {
                 "type": "number"
@@ -281,7 +328,9 @@
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -336,11 +385,15 @@
           },
           "bottom": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "reverse": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "radius": {
             "type": "number",
@@ -348,7 +401,9 @@
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -396,7 +451,9 @@
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -435,7 +492,9 @@
         },
         "destination": {
           "type": "boolean",
-          "enum": [true]
+          "enum": [
+            true
+          ]
         },
         "width": {
           "type": "integer",
@@ -443,7 +502,9 @@
         },
         "hidden": {
           "type": "boolean",
-          "enum": [true]
+          "enum": [
+            true
+          ]
         },
         "angle": {
           "type": "number",
@@ -547,15 +608,21 @@
         },
         "destination": {
           "type": "boolean",
-          "enum": [true]
+          "enum": [
+            true
+          ]
         },
         "reserved": {
           "type": "boolean",
-          "enum": [true]
+          "enum": [
+            true
+          ]
         },
         "inverse": {
           "type": "boolean",
-          "enum": [true]
+          "enum": [
+            true
+          ]
         },
         "inverseTextColor": {
           "type": "string"
@@ -584,7 +651,9 @@
         },
         "hidden": {
           "type": "boolean",
-          "enum": [true]
+          "enum": [
+            true
+          ]
         },
         "rotate": {
           "type": "number",
@@ -613,13 +682,22 @@
         },
         "fontStyle": {
           "type": "string",
-          "enum": ["normal", "italic", "oblique"]
+          "enum": [
+            "normal",
+            "italic",
+            "oblique"
+          ]
         },
         "fontWeight": {
           "oneOf": [
             {
               "type": "string",
-              "enum": ["normal", "bold", "bolder", "lighter"]
+              "enum": [
+                "normal",
+                "bold",
+                "bolder",
+                "lighter"
+              ]
             },
             {
               "type": "number"
@@ -662,7 +740,9 @@
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -706,7 +786,9 @@
         },
         "reverse": {
           "type": "boolean",
-          "enum": [true]
+          "enum": [
+            true
+          ]
         },
         "rows": {
           "type": "integer",
@@ -741,7 +823,9 @@
         },
         "hidden": {
           "type": "boolean",
-          "enum": [true]
+          "enum": [
+            true
+          ]
         },
         "angle": {
           "type": "number",
@@ -786,7 +870,9 @@
           },
           "dashed": {
             "type": "boolean",
-            "enum": [false]
+            "enum": [
+              false
+            ]
           },
           "width": {
             "type": "integer",
@@ -800,7 +886,9 @@
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -855,11 +943,15 @@
           },
           "pass": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "outside": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "name": {
             "$ref": "#/definitions/name"
@@ -900,7 +992,9 @@
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -949,7 +1043,9 @@
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -1014,7 +1110,9 @@
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -1069,7 +1167,9 @@
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -1137,17 +1237,28 @@
           },
           "dashed": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "fontStyle": {
             "type": "string",
-            "enum": ["normal", "italic", "oblique"]
+            "enum": [
+              "normal",
+              "italic",
+              "oblique"
+            ]
           },
           "fontWeight": {
             "oneOf": [
               {
                 "type": "string",
-                "enum": ["normal", "bold", "bolder", "lighter"]
+                "enum": [
+                  "normal",
+                  "bold",
+                  "bolder",
+                  "lighter"
+                ]
               },
               {
                 "type": "number"
@@ -1163,7 +1274,9 @@
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -1231,17 +1344,28 @@
           },
           "dashed": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "fontStyle": {
             "type": "string",
-            "enum": ["normal", "italic", "oblique"]
+            "enum": [
+              "normal",
+              "italic",
+              "oblique"
+            ]
           },
           "fontWeight": {
             "oneOf": [
               {
                 "type": "string",
-                "enum": ["normal", "bold", "bolder", "lighter"]
+                "enum": [
+                  "normal",
+                  "bold",
+                  "bolder",
+                  "lighter"
+                ]
               },
               {
                 "type": "number"
@@ -1257,7 +1381,9 @@
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -1312,11 +1438,19 @@
         "properties": {
           "background": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "type": {
             "type": "string",
-            "enum": ["circle", "diamond", "hexagon", "square", "triangle"]
+            "enum": [
+              "circle",
+              "diamond",
+              "hexagon",
+              "square",
+              "triangle"
+            ]
           },
           "text": {
             "type": "string"
@@ -1352,17 +1486,28 @@
           },
           "dashed": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "fontStyle": {
             "type": "string",
-            "enum": ["normal", "italic", "oblique"]
+            "enum": [
+              "normal",
+              "italic",
+              "oblique"
+            ]
           },
           "fontWeight": {
             "oneOf": [
               {
                 "type": "string",
-                "enum": ["normal", "bold", "bolder", "lighter"]
+                "enum": [
+                  "normal",
+                  "bold",
+                  "bolder",
+                  "lighter"
+                ]
               },
               {
                 "type": "number"
@@ -1378,7 +1523,9 @@
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -1424,14 +1571,21 @@
           },
           "size": {
             "type": "string",
-            "enum": ["tiny", "small", "medium", "large"]
+            "enum": [
+              "tiny",
+              "small",
+              "medium",
+              "large"
+            ]
           },
           "type": {
             "type": "string"
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -1477,7 +1631,9 @@
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -1541,14 +1697,24 @@
           },
           "gauge": {
             "type": "string",
-            "enum": ["narrow", "dual", "dashed", "line"]
+            "enum": [
+              "narrow",
+              "dual",
+              "dashed",
+              "line"
+            ]
           },
           "offset": {
             "type": "number"
           },
           "cross": {
             "type": "string",
-            "enum": ["over", "under", "top", "bottom"]
+            "enum": [
+              "over",
+              "under",
+              "top",
+              "bottom"
+            ]
           },
           "path": {
             "type": "string"
@@ -1575,7 +1741,9 @@
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -1618,7 +1786,9 @@
         "properties": {
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -1674,7 +1844,9 @@
           },
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
@@ -1708,7 +1880,9 @@
           }
         },
         "additionalProperties": false,
-        "required": ["value"]
+        "required": [
+          "value"
+        ]
       }
     },
     "hex": {
@@ -1727,12 +1901,16 @@
         },
         "broken": {
           "type": "boolean",
-          "enum": [true],
+          "enum": [
+            true
+          ],
           "description": "Marks this tile as being broken and not ready for exporting."
         },
         "mask": {
           "type": "boolean",
-          "enum": [false],
+          "enum": [
+            false
+          ],
           "description": "Remove the special bleed mask when printing these tiles. They will always be printed with no bleed."
         },
         "borders": {
@@ -1838,7 +2016,9 @@
         "properties": {
           "hidden": {
             "type": "boolean",
-            "enum": [true]
+            "enum": [
+              true
+            ]
           },
           "angle": {
             "type": "number",
