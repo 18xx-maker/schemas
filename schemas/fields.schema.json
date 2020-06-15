@@ -49,6 +49,13 @@
       }
     },
 
+    "revenue": {
+      "type": "object",
+      "properties": {
+        "groups": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
     "position": {
       "type": "object",
       "properties": {
