@@ -129,8 +129,10 @@
       "properties": {
         "company": { "type": "string" },
         "destination": { "type": "boolean", "enum": [true] },
-        "width": { "type": "integer", "minimum": 1 }
+        "width": { "type": "integer", "minimum": 1 },
+        "bgFill": { "type": "string" }
       },
+      "required": ["company"],
       "additionalProperties": false
     },
 
@@ -139,6 +141,7 @@
       "properties": {
         "label": { "type": "string", "minLength": 1 },
         "color": { "type": "string" },
+        "bgFill": { "type": "string" },
         "iconColor": { "type": "string" },
         "outline": { "type": "string" },
 
@@ -160,6 +163,7 @@
         "inverse": { "type": "boolean", "enum": [true] },
         "inverseTextColor": { "type": "string" },
         "angle": { "type": "number", "minimum": 0, "exclusiveMaximum": 360 },
+        "percent": { "type": "number", "minimum": 0 },
         "width": { "type": "integer", "minimum": 1 }
       },
       "additionalProperties": false
@@ -217,6 +221,7 @@
         "type": "object",
         "properties": {
           "name": { "$ref": "#/definitions/name" },
+          "city": { "type": "boolean", "enum": [true] },
           "dashed": { "type": "boolean", "enum": [false] },
           "width": { "type": "integer", "minimum": 1 },
           "color": { "type": "string" },
@@ -237,6 +242,7 @@
             "maximum": 6,
             "default": 1
           },
+          "extend": { "type": "string", "enum": ["left", "right"] },
           "pass": { "type": "boolean", "enum": [true] },
           "outside": { "type": "boolean", "enum": [true] },
           "name": { "$ref": "#/definitions/name" },
@@ -470,6 +476,14 @@
     "hex": {
       "type": "object",
       "properties": {
+        "print": { "type": "integer", "minimum": 0 },
+        "quantity": {
+          "oneOf": [
+            { "type": "integer", "minimum": 1 },
+            { "type": "string", "enum": ["∞"] }
+          ]
+        },
+        "tile": { "type": "string" },
         "color": { "type": "string" },
         "encoding": { "type": "string" },
         "group": {

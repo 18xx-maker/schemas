@@ -171,6 +171,7 @@
         "designer": { "type": "string" },
         "background": { "type": "string" },
         "notes": { "type": "string" },
+        "publisher": { "type": "string" },
         "extraTotalHeight": { "type": "number", "minimum": 1 },
         "extraTotalWidth": { "type": "number", "minimum": 1 },
         "titleX": { "type": "number" },
@@ -377,7 +378,20 @@
     },
     "rounds": {},
     "stock": {},
-    "tiles": {},
+    "tiles": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "integer",
+            "minimum": 1
+          },
+          {
+            "$ref": "tiles.schema.json#/definitions/hex"
+          }
+        ]
+      }
+    },
     "tokens": {},
     "turns": {},
     "trains": {
