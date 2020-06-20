@@ -1,5 +1,10 @@
 # 18xx-schemas
 
+[![build](https://travis-ci.org/18xx-maker/schemas.svg?branch=master)](https://travis-ci.org/18xx-maker/schemas)
+![version](https://img.shields.io/npm/v/@18xx-maker/schemas)
+![downloads](https://img.shields.io/npm/dt/@18xx-maker/schemas)
+![license](https://img.shields.io/npm/l/@18xx-maker/schemas)
+
 This repository contains the game and tile schemas that 18xx-maker uses for it's
 game files.
 

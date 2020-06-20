@@ -113,6 +113,12 @@
       "required": ["borderRadius"],
       "additionalProperties": false
     },
+    "export": {
+      "type": "object",
+      "properties": {
+        "allLayouts": { "type": "boolean" }
+      }
+    },
     "cards": {
       "type": "object",
       "properties": {
