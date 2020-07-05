@@ -199,11 +199,6 @@
         "mustSellInBlocks": { "type": "boolean", "enum": [true] },
         "marketTokens": { "type": "integer", "minimum": 0 },
         "extraStationTokens": { "type": "integer", "mimimum": 1 },
-        "mustSellInBlocks": { "type": "boolean" },
-        "capitalization": {
-          "type": "string",
-          "enum": ["full", "incremental"]
-        },
         "currency": {
           "description": "The currency format string must contain a # character",
           "type": "string",
