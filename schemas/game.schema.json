@@ -220,6 +220,8 @@
       "type": "object",
       "properties": {
         "bgg": { "$ref": "#/definitions/link" },
+        "license": { "$ref": "#/definitions/link" },
+        "purchase": { "$ref": "#/definitions/link" },
         "rules": { "$ref": "#/definitions/link" }
       },
       "additionalProperties": false
