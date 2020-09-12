@@ -501,10 +501,17 @@
         "outline": {
           "type": "string"
         },
+        "outlineWidth": {
+          "type": "integer",
+          "minimum": 1
+        },
         "circle": {
           "type": "string"
         },
         "shield": {
+          "type": "string"
+        },
+        "shieldTop": {
           "type": "string"
         },
         "shield3": {
@@ -872,6 +879,10 @@
             "minimum": 1,
             "maximum": 6,
             "default": 1
+          },
+          "width": {
+            "type": "integer",
+            "minimum": 1
           },
           "extend": {
             "type": "string",
@@ -1506,6 +1517,17 @@
           "type": {
             "type": "string"
           },
+          "width": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "stroke": {
+            "type": "string"
+          },
+          "strokeWidth": {
+            "type": "integer",
+            "minimum": 1
+          },
           "hidden": {
             "type": "boolean",
             "enum": [true]
@@ -1556,6 +1578,10 @@
               "minimum": 1,
               "maximum": 6
             }
+          },
+          "width": {
+            "type": "integer",
+            "minimum": 1
           },
           "color": {
             "type": "string"

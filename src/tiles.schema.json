@@ -144,9 +144,11 @@
         "bgFill": { "type": "string" },
         "iconColor": { "type": "string" },
         "outline": { "type": "string" },
+        "outlineWidth": { "type": "integer", "minimum": 1 },
 
         "circle": { "type": "string" },
         "shield": { "type": "string" },
+        "shieldTop": { "type": "string" },
         "shield3": { "type": "string" },
         "shield3TopLeft": { "type": "string" },
         "shield3TopCenter": { "type": "string" },
@@ -245,6 +247,7 @@
             "maximum": 6,
             "default": 1
           },
+          "width": { "type": "integer", "minimum": 1 },
           "extend": { "type": "string", "enum": ["left", "right"] },
           "pass": { "type": "boolean", "enum": [true] },
           "outside": { "type": "boolean", "enum": [true] },
@@ -389,7 +392,10 @@
       "items": {
         "type": "object",
         "properties": {
-          "type": { "type": "string" }
+          "type": { "type": "string" },
+          "width": { "type": "integer", "minimum": 1 },
+          "stroke": { "type": "string" },
+          "strokeWidth": { "type": "integer", "minimum": 1 }
         },
         "additionalProperties": false
       }
@@ -408,6 +414,7 @@
               "maximum": 6
             }
           },
+          "width": { "type": "integer", "minimum": 1 },
           "color": { "type": "string" },
           "borderColor": { "type": "string" },
           "gaugeColor": { "type": "string" },
