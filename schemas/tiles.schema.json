@@ -1331,7 +1331,14 @@
           },
           "type": {
             "type": "string",
-            "enum": ["circle", "diamond", "hexagon", "square", "triangle"]
+            "enum": [
+              "circle",
+              "diamond",
+              "ellipse",
+              "hexagon",
+              "square",
+              "triangle"
+            ]
           },
           "text": {
             "type": "string"
