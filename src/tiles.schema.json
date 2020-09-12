@@ -555,7 +555,7 @@
 
   "type": "object",
   "propertyNames": {
-    "pattern": "^X?[0-9]+([a-zA-Z]+)?(\\|[0-9a-zA-Z]+)?$"
+    "pattern": "^[0-9a-zA-Z]+(\\|[0-9a-zA-Z]+)?$"
   },
   "additionalProperties": { "$ref": "#/definitions/hex" }
 }
