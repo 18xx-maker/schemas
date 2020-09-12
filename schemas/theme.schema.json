@@ -111,6 +111,9 @@
             },
             "river": {
               "$ref": "#/definitions/color"
+            },
+            "border": {
+              "$ref": "#/definitions/color"
             }
           },
           "additionalProperties": false
@@ -225,6 +228,9 @@
           "$ref": "#/definitions/themeColor"
         },
         "land": {
+          "$ref": "#/definitions/themeColor"
+        },
+        "brightGreen": {
           "$ref": "#/definitions/themeColor"
         },
         "orange": {
