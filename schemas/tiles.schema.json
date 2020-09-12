@@ -510,6 +510,15 @@
         "shield3": {
           "type": "string"
         },
+        "shield3TopLeft": {
+          "type": "string"
+        },
+        "shield3TopCenter": {
+          "type": "string"
+        },
+        "shield3TopRight": {
+          "type": "string"
+        },
         "square": {
           "type": "string"
         },
