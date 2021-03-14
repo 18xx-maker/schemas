@@ -164,11 +164,18 @@
           "type": "string",
           "enum": ["carth", "color"]
         },
+        "layout": {
+          "type": "string",
+          "enum": ["free", "3x1", "3x2", "3x1minors"]
+        },
         "cutlines": { "type": "number", "minimum": 0 },
         "bleed": { "type": "number", "minimum": 0 },
         "border": { "type": "number", "minimum": 0 },
         "halfWidth": { "type": "boolean" },
-        "blackBand": { "type": "boolean" }
+        "smallerMinors": { "type": "boolean" },
+        "blackBand": { "type": "boolean" },
+        "showPhaseChart": { "type": "boolean" },
+        "showTurnOrder": { "type": "boolean" }
       },
       "required": ["style", "halfWidth", "cutlines", "border", "blackBand"],
       "additionalProperties": false

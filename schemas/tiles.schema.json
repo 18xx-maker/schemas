@@ -1911,7 +1911,7 @@
       },
       "additionalProperties": false
     },
-    "routeBonus": {
+    "routeBonuses": {
       "items": {
         "properties": {
           "hidden": {
