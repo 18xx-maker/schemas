@@ -210,6 +210,7 @@
           "type": "string",
           "enum": ["right", "left", "none"]
         },
+        "colorblind": { "type": "boolean" },
         "layout": {
           "type": "string",
           "enum": ["offset", "individual", "die", "smallDie"]
